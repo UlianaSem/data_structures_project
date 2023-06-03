@@ -15,3 +15,12 @@ class TestStack(unittest.TestCase):
         stack.push('test_data_2')
 
         self.assertEqual(len(stack.stack), 2)
+
+    def test_pop(self):
+        stack = src.stack.Stack()
+        stack.push('test_data')
+        stack.push('test_data_2')
+
+        self.assertEqual(stack.pop(), 'test_data_2')
+        self.assertEqual(stack.top.data, 'test_data')
+        self.assertEqual(len(stack.stack), 1)
