@@ -29,7 +29,12 @@ class Stack:
     def pop(self):
         """
         Метод для удаления элемента с вершины стека и его возвращения
-
         :return: данные удаленного элемента
         """
-        pass
+        removed_item = self.stack.pop()
+        if len(self.stack) > 0:
+            self.top = self.stack[len(self.stack)-1]
+        else:
+            self.top = None
+
+        return removed_item.data
