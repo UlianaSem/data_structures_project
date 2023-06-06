@@ -19,7 +19,7 @@ class Stack:
         self.top = None
 
     def __str__(self):
-        return ', '.join(self.stack)
+        return ', '.join([x.data for x in self.stack])
 
     def push(self, data):
         """
