@@ -62,7 +62,18 @@ class LinkedList:
 
         return data_list
 
-    def get_data_by_id(self):
+    def get_data_by_id(self, id):
         """Возвращает первый найденный в LinkedList словарь с ключом 'id', значение которого равно переданному в метод
         значению"""
-        pass
+        node = self.head
+
+        while node:
+            try:
+                if node.data['id'] == id:
+                    return node.data
+            except TypeError:
+                print('Данные не являются словарем или в словаре нет id.')
+
+            node = node.next_node
+
+        return None
